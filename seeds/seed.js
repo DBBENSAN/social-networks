@@ -8,7 +8,7 @@ const seedDatabase = async () => {
    db.once('open', async () => {
       await seedUsers();
       await seedThoughts()
-      console.log('ok')
+      console.log('DB SEEDED DB SEEDED DB SEEDED DB SEEDED DB SEEDED')
       process.exit(0)
    })
 }
