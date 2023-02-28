@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose');
+const dateFormat = require('../utils/dateFormat');
 
 const thoughtSchema = new Schema(
   {
@@ -11,7 +12,7 @@ const thoughtSchema = new Schema(
     createdAt: {
       type: Date,
       default: Date.now,
-      get: (timestamp) => dateFormat(timestamp),
+      get: dateFormat,
     },
     username: {
       type: String,
@@ -36,9 +37,6 @@ thoughtSchema.virtual('reactionCount').get(function () {
   return this.reactions.length;
 });
 
-function dateFormat(timestamp) {
-  return new Date(timestamp).toISOString();
-}
 
 const Thought = model('Thought', thoughtSchema);
 
