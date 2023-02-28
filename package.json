@@ -11,7 +11,7 @@
     "url": "git+https://github.com/DBBENSAN/social-networks.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Daniele Bensan",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/DBBENSAN/social-networks/issues"
@@ -19,6 +19,6 @@
   "homepage": "https://github.com/DBBENSAN/social-networks#readme",
   "dependencies": {
     "express": "^4.18.2",
-    "mongoose": "^7.0.0"
+    "mongoose": "^6.0.13"
   }
 }
