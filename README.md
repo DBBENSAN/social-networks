@@ -1,4 +1,5 @@
-## eCommerce Backend
+## social-networks
+
 A scalable and robust eCommerce platform backend built using Node.js, Express, Mongoose, and MongoDB.
 
 ## Technologies Used:
