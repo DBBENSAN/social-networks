@@ -1,4 +1,5 @@
-## eCommerce Backend
+## social-networks
+
 A scalable and robust eCommerce platform backend built using Node.js, Express, Mongoose, and MongoDB.
 
 ## Technologies Used:
@@ -17,7 +18,7 @@ This project is a backend for an eCommerce platform. It provides a RESTful API t
 ## Getting Started
 
 ```
-Clone the repository: git clone https://github.com/your-username/eCommerce-Backend.git
+Clone the repository: git clone https://github.com/DBBENSAN/social-networks.git
 Install dependencies: npm install
 Start the server: npm start
 ```
