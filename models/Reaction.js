@@ -1,4 +1,4 @@
-const { Schema, model } = require('mongoose');
+const { Schema } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
 
 const reactionSchema = new Schema(
@@ -21,14 +21,8 @@ const reactionSchema = new Schema(
       default: Date.now,
       get: dateFormat,
     },
-  },
-  {
-    toJSON: {
-      getters: true,
-    },
   }
 );
 
-const Reaction = model('Reaction', reactionSchema);
 
-module.exports = Reaction;
+module.exports = reactionSchema;

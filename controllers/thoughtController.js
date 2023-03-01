@@ -11,7 +11,7 @@ module.exports = {
 
    async getSingleThought(req, res) {
       try {
-         const thought = await Thought.findOne({ _id: req.params.thoughtId }).select("-__v");
+         const thought = await Thought.findOne({ _id: req.params.id }).select("-__v");
          if (!thought) {
             return res.status(404).json({ message: "No thought with that id" });
          }
@@ -40,7 +40,7 @@ module.exports = {
    async updateThought(req, res) {
       try {
          const thought = await Thought.findOneAndUpdate(
-            { _id: req.params.thoughtId },
+            { _id: req.params.id },
             { $set: req.body },
             { runValidators: true, new: true }
          );
@@ -56,13 +56,13 @@ module.exports = {
 
    async deleteThought(req, res) {
       try {
-         const thought = await Thought.findOneAndRemove({ _id: req.params.thoughtId });
+         const thought = await Thought.findOneAndRemove({ _id: req.params.id });
          if (!thought) {
             return res.status(404).json({ message: "No thought with that id" });
          }
          await User.findOneAndUpdate(
-            { thoughts: req.params.thoughtId },
-            { $pull: { thoughts: req.params.thoughtId } },
+            { thoughts: req.params.id },
+            { $pull: { thoughts: req.params.id } },
             { new: true }
          );
          res.status(200).json({ message: "Thought deleted" });
@@ -75,7 +75,7 @@ module.exports = {
    async createReaction(req, res) {
       try {
          const thought = await Thought.findOneAndUpdate(
-            { _id: req.params.thoughtId },
+            { _id: req.params.id },
             { $addToSet: { reactions: req.body } },
             { runValidators: true, new: true }
          );
@@ -88,14 +88,24 @@ module.exports = {
          return res.status(500).json({ message: "Internal Server Error" });
       }
    },
+
+   async deleteReaction (req, res) {
+      try {
+        const thought = await Thoughts.findOneAndUpdate(
+          { _id: req.params.id },
+          { $pull: { reactions: { reactionId: req.params.reactionId } } },
+          { runValidators: true, new: true }
+        );
+    
+        if (!thought) {
+          return res.status(404).json({ message: "No thought with this id!" });
+        }
+    
+        res.json(thought);
+      } catch (err) {
+        res.status(500).json(err);
+      }
+    }
 };
 
-module.exports = {
-   getThoughts,
-   getSingleThought,
-   createThought,
-   updateThought,
-   deleteThought,
-   createReaction,
-   deleteReaction,
-};
+

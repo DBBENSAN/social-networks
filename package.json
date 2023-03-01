@@ -20,6 +20,7 @@
   "homepage": "https://github.com/DBBENSAN/social-networks#readme",
   "dependencies": {
     "express": "^4.18.2",
-    "mongoose": "^6.0.13"
+    "mongoose": "^6.0.13",
+    "mongodb": "^5.0.1"
   }
 }
