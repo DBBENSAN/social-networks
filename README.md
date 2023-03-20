@@ -1,10 +1,8 @@
-## social-networks
-
-A scalable and robust eCommerce platform backend built using Node.js, Express, Mongoose, and MongoDB.
+# social-networks
 
 ## Technologies Used:
 
-|  |     | 
+| Technology  |   Resource URL  | 
 | :-------- | :------- | 
 | `Node.js:` | `https://nodejs.org/en/` | 
 | `Express:` | `https://expressjs.com/` | 
@@ -13,7 +11,11 @@ A scalable and robust eCommerce platform backend built using Node.js, Express, M
 
 
 ## Introduction
-This project is a backend for an eCommerce platform. It provides a RESTful API to manage products, orders, and customers. It is built using Node.js and Express for the server, Mongoose for the database, and MongoDB as the database system.
+This is a Node.js application that provides API endpoints for creating users, adding friends, creating thoughts, and reacting to thoughts. The app uses Express.js as the web framework, Mongoose as the ODM (Object Document Mapper) for MongoDB, and MongoDB as the database.
+
+The API endpoints are organized into routes for users, friends, thoughts, and reactions. Each route has its own set of endpoints for performing CRUD (Create, Read, Update, Delete) operations on the corresponding resource.
+
+Overall, the social-networks app provides a useful example of how to build a back-end for a social network using Node.js, Express.js, Mongoose, and MongoDB, with functionality for users to create and manage their own content, as well as interact with content created by others.
 
 ## Getting Started
 
@@ -25,19 +27,18 @@ Start the server: npm start
 
 ## Demo
 ```
-A demo video of the eCommerce backend can be found here
+https://www.youtube.com/watch?v=XI8d1yl2Cug
 ```
 
 ## Deployment
 
-To deploy the eCommerce backend, you will need to set up a MongoDB database and configure the MONGODB_URI environment variable in the .env file. Then, run the following commands:
-
  ```
 Seed the database: npm run seed
 Start the server: npm start
-Contributing
-Contributions to this project are not currently being accepted.
+Follow the localHost link
 ```
+## Contributing
+Contributions to this project are not currently being accepted.
 
 License
 This project is licensed under the MIT License. Please see the LICENSE file for more information
