@@ -1,6 +1,4 @@
-const { Schema, model } = require('mongoose');
 const mongoose = require('mongoose');
-// const thoughtSchema = require('./Thought');
 
 const userSchema = new mongoose.Schema(
   {
@@ -9,7 +7,7 @@ const userSchema = new mongoose.Schema(
       required: true,
       unique: true,
       trim: true,
-      maxlength: 50,
+      maxlength: 20,
     },
     email: {
       type: String,
@@ -20,13 +18,13 @@ const userSchema = new mongoose.Schema(
     },
     thoughts: [
       {
-        type: Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'Thought',
       },
     ],
     friends: [
       {
-        type: Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
       },
     ],
